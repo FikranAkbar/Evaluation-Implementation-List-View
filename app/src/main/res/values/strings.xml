@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Anime Profile Picture</string>
+
+    <string-array name="character_name">
+        <item>Hinata Shouyo</item>
+        <item>Kamado Tanjirou</item>
+        <item>Kirigaya Kazuto</item>
+        <item>Yami Yugi</item>
+        <item>Kageyama Tobio</item>
+        <item>Uzumaki Naruto</item>
+    </string-array>
+
+    <string-array name="anime_name">
+        <item>Haikyuu</item>
+        <item>Kimetsu No Yaiba</item>
+        <item>Sword Art Online</item>
+        <item>Yu Gi Oh</item>
+        <item>Haikyuu</item>
+        <item>Naruto</item>
+    </string-array>
 </resources>
