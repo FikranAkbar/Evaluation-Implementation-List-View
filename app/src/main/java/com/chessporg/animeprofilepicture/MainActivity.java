@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent showDetailActivity = new Intent();
+                Intent showDetailActivity = new Intent(getApplication(), DetailActivity.class);
                 showDetailActivity.putExtra("com.chessporg.ITEM_INDEX", position);
                 startActivity(showDetailActivity);
             }

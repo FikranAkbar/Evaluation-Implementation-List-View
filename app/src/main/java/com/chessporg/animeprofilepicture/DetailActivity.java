@@ -20,8 +20,8 @@ public class DetailActivity extends AppCompatActivity {
         int index = in.getIntExtra("com.chessporg.ITEM_INDEX", -1);
         if(index > -1){
             int pic = getImg(index);
-            ImageView imageView = (ImageView) findViewById(R.id.imageView);
-            scaleImg(imageView, pic);
+            ImageView img = (ImageView) findViewById(R.id.imageView);
+            scaleImg(img, pic);
         }
     }
 
@@ -45,15 +45,17 @@ public class DetailActivity extends AppCompatActivity {
         BitmapFactory.decodeResource(getResources(), pic, options);
 
         int imgWidth = options.outWidth;
-        int scrWidth = screen.getWidth();
+        int screenWidth = screen.getWidth();
 
-        if(imgWidth > scrWidth){
-            int ratio = Math.round((float) imgWidth / (float) scrWidth);
+        if(imgWidth > screenWidth){
+            int ratio = Math.round((float) imgWidth / (float) screenWidth);
             options.inSampleSize = ratio;
         }
 
         options.inJustDecodeBounds = false;
         Bitmap scaledImg = BitmapFactory.decodeResource(getResources(), pic, options);
         img.setImageBitmap(scaledImg);
+
+
     }
 }
