@@ -2,7 +2,10 @@ package com.chessporg.animeprofilepicture;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -23,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         animes = getResources().getStringArray(R.array.anime_name);
 
         myListView.setAdapter(new ItemAdapter(this, names, animes));
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent showDetailActivity = new Intent();
+                showDetailActivity.putExtra("com.chessporg.ITEM_INDEX", position);
+                startActivity(showDetailActivity);
+            }
+        });
 
     }
 }
